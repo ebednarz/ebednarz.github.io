@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "ebednarz.github.io",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "author": "Eric Bednarz <eric.bednarz+npm@gmail.com>",
+  "description": "ebednarz.github.io source files",
+  "config": {
+    "csspresso": {
+      "source": "./style",
+      "target": "../master/assets/style"
+    }
+  },
+  "scripts": {
+    "build": "npm run markup && npm run style",
+    "markup": "node ./build/index.js",
+    "style": "csspresso"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebednarz/ebednarz.github.io.git"
+  },
+  "dependencies": {
+    "csspresso": "^0.2.9",
+    "es6pack": "^0.10.3",
+    "mkdirp": "^0.5.1",
+    "square-brackets": "0.0.2"
+  }
+}
