@@ -10,13 +10,26 @@ module.exports = ({
   ['html', {
     lang: 'en',
   }, [
-    ['head', [
+    ['head', {
+      itemscope: '',
+    }, [
+      ['meta', {
+        charset: 'utf-8',
+      }],
+      ['meta', {
+        name: 'viewport',
+        content: 'width=device-width,initial-scale=1.0',
+      }],
       ['title', {
         lang: 'de',
       }, title],
       ['link', {
         rel: 'stylesheet',
         href: '/assets/style/app.css',
+      }],
+      ['link', {
+        itemprop: 'script-resource',
+        href: '/assets/script/app.js',
       }],
       ['script', es6pack],
     ]],
