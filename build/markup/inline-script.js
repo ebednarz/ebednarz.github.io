@@ -1,5 +1,3 @@
 'use strict';
 
-module.exports = [
-  require('es6pack'),
-];
+module.exports = [];

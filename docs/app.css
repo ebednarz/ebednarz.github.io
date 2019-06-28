@@ -13,13 +13,17 @@ html {
 }
 
 body {
+  display: -webkit-box;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
   flex-wrap: wrap;
   margin: 0;
   font: 1em/1.3 Georgia, serif;
   color: #fff;
+  background: #c00;
   background: var(--primary-color);
 }
 
@@ -29,6 +33,7 @@ table {
 }
 
 table small {
+  color: #f66;
   color: var(--secondary-color);
   background: transparent;
   font-size: 1em;
