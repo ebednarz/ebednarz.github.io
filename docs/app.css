@@ -1,6 +1,6 @@
 :root {
   --primary-color: #c00;
-  --secondary-color: #f66;
+  --secondary-color: #faa;
 }
 
 html,
@@ -16,9 +16,9 @@ body {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0;
   font: 1em/1.3 Georgia, serif;
@@ -28,23 +28,28 @@ body {
 }
 
 table {
-  margin: 0 0 0.5em 0;
+  margin: 0;
   border-collapse: collapse;
 }
 
 table small {
-  color: #f66;
+  color: #faa;
   color: var(--secondary-color);
   background: transparent;
   font-size: 1em;
 }
 
-caption {
-  caption-side: bottom;
-  margin: 0;
-  padding: 0 0 0 0.15em;
+figcaption {
+  margin: 0 0 0 0.1em;
+  color: #faa;
+  color: var(--secondary-color);
   text-align: center;
-  font-size: 0.75em;
+  line-height: 2;
+  font-size: 0.47em;
+}
+
+figcaption span {
+  color: #fff;
 }
 
 td:first-child {
@@ -56,26 +61,41 @@ td {
   vertical-align: baseline;
 }
 
+a[href] {
+  display: inline-block;
+  padding: 0em 1.6em;
+  border-radius: 1em;
+  color: #f60;
+  background: #fcc;
+  text-decoration: none;
+  font-size: 0.5em;
+}
+
+a[href]:hover,
+a[href]:focus {
+  background: #fff;
+}
+
 @media only screen and (max-width: 39.999em) {
-  table {
+  figure {
     font-size: 14vw;
   }
 }
 
 @media only screen and (min-width: 40em) {
-  table {
+  figure {
     font-size: 4vw;
   }
 }
 
 @media only screen and (min-width: 40em) and (min-height: 30em) {
-  table {
+  figure {
     font-size: 6vw;
   }
 }
 
 @media only screen and (min-width: 40em) and (min-height: 36em) {
-  table {
+  figure {
     font-size: 8vw;
   }
 }

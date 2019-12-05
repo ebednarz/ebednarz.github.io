@@ -1,0 +1,7 @@
+# copy to ../Node.js
+version: "3.6"
+services:
+  app:
+    volumes:
+      - ../eric.bednarz.bike/source:/home/node/app/source
+      - ../eric.bednarz.bike/docs:/home/node/app/public
