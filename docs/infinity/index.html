@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-wdidth,initial-scale=1.0">
+  <title>Infinity | eric.bednarz.bike</title>
+  <link href="/app.css" rel="stylesheet">
+  <style>
+    main h1 {
+      margin: calc((var(--baseline) / 3) * 2) 0;
+      text-align: center;
+      font-size: 5vw;
+      font-weight: normal;
+    }
+
+    main h1 span {
+      display: block;
+      letter-spacing: 0.04rem;
+    }
+
+    main h1 small {
+      display: block;
+      color: var(--secondary-color);
+      background: transparent;
+      font-size: 1em;
+    }
+
+    main ul {
+      margin: calc(var(--baseline) * 2) 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    main li {
+      margin: var(--baseline) 0;
+    }
+  </style>
+  <script type="module">
+    function whatWalterSaid(inputEvent) {
+      const {
+        target: {
+          type,
+        },
+      } = inputEvent;
+
+      if (type === 'checkbox') {
+        inputEvent.preventDefault();
+        window.alert('No. What’s mine is mine.');
+      }
+    }
+
+    document.addEventListener('click', whatWalterSaid);
+  </script>
+</head>
+<body>
+
+  <nav aria-label="Home">
+    This is a <a href="/">private residence</a>, man.
+  </nav>
+
+  <main id="main">
+    <h1>
+      <span>Strava and Beyond the Infinite</span>
+      <small>—getting enlightenment done—</small>
+    </h1>
+    <ul>
+      <li>
+        <input type="checkbox" checked>
+        <a target="_blank" href="https://support.strava.com/hc/en-us/articles/216918827-Delete-your-Strava-Account">Cut
+          off their Johnson</a>.
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <a target="_blank" href="https://this-page-intentionally-left-blank.org/">Ride with pleasure</a>.
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <a target="_blank" href="https://www.youtube.com/watch?v=sYsw0KVRjCM">The Dude abides</a>.
+      </li>
+    </ul>
+  </main>
+
+  <nav aria-label="VeloViewer by year">
+    <ul>
+      <li>
+        <a href="/2013/">2013</a>
+      </li>
+      <li>
+        <a href="/2014/">2014</a>
+      </li>
+      <li>
+        <a href="/2015/">2015</a>
+      </li>
+      <li>
+        <a href="/2016/">2016</a>
+      </li>
+      <li>
+        <a href="/2017/">2017</a>
+      </li>
+      <li>
+        <a href="/2018/">2018</a>
+      </li>
+      <li>
+        <a href="/2019/">2019</a>
+      </li>
+      <li>
+        <a href="#main">∞</a>
+      </li>
+    </ul>
+  </nav>
+
+</body>
+</html>

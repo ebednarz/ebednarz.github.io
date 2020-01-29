@@ -1,35 +1,94 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-  <meta charset=utf-8>
-  <meta
-    name=viewport
-    content="width=device-width,initial-scale=1.0"
-  >
-  <title lang=de>Die fetten Jahre sind vorbei</title>
-  <link
-    rel=stylesheet
-    href="/app.css"
-  >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-wdidth,initial-scale=1.0">
+  <title lang="de">Die fetten Jahre sind vorbei</title>
+  <link href="/app.css" rel=stylesheet>
+  <style>
+    html,
+    body,
+    main {
+      height: 100%;
+    }
+
+    main figure {
+      display: flex;
+      flex-direction: column;
+      font-size: 9vw;
+    }
+
+    main table {
+      margin: 0 auto 1.2vw auto;
+      border-collapse: collapse;
+    }
+
+    main table small {
+      color: var(--secondary-color);
+      background: transparent;
+      font-size: 1em;
+    }
+
+    main td:first-child {
+      padding-right: 0.15em;
+      text-align: right;
+    }
+
+    main td:last-child {
+      padding-left: 0.15em;
+    }
+
+    main td {
+      padding: 0;
+      vertical-align: baseline;
+    }
+
+    main figcaption {
+      margin: 0 0 0 0.1em;
+      color: var(--secondary-color);
+      text-align: center;
+      line-height: 1.7;
+      font-size: 0.49em;
+    }
+
+    main a[href] {
+      transition: 200ms all ease;
+    }
+
+    main a[href]:hover {
+      transform: scale(1.08);
+    }
+
+    main a[href]:focus {
+      outline-offset: 1vw;
+    }
+  </style>
+</head>
 <body>
-  <figure>
-    <table>
-      <tbody>
-        <tr>
-          <td><small>+</small>104,505
-          <td><small>km</small>
-        </tr>
-        <tr>
-          <td><small>−</small>28.7
-          <td><small>kg</small>
-        </tr>
-    </table>
-    <figcaption>
-      from
-      <span>july 2013</span>
-      to
-      <span>july 2019</span>
-      <br>
-      <!-- <a href="/">&#8230; and Beyond the Infinite</a> -->
-    </figcaption>
-  </figure>
+
+  <main id="main">
+    <figure>
+      <a href="/infinity/">
+        <table>
+          <tbody>
+            <tr>
+              <td><small>+</small>104,505</td>
+              <td><small>km</small></td>
+            </tr>
+            <tr>
+              <td><small>−</small>28.7</td>
+              <td><small>kg</small></td>
+            </tr>
+        </table>
+      </a>
+      <figcaption>
+        from
+        <a href="/2013/">july 2013</a>
+        to
+        <a href="/2019/">july 2019</a>
+      </figcaption>
+    </figure>
+  </main>
+
+</body>
+</html>

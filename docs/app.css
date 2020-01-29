@@ -1,101 +1,175 @@
 :root {
   --primary-color: #c00;
   --secondary-color: #faa;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-html {
-  overflow-y: scroll;
+  --foreground-color: #fff;
+  --backdrop-color: #600;
+  --intrinsic-width: 800px;
+  --basefactor: 1.5;
+  --basesize: 1.2rem;
+  --baseline: calc(var(--basesize) * var(--basefactor));
 }
 
 body {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto calc(100% - calc(var(--baseline) * 4) - 1px) auto;
+  justify-content: stretch;
   align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  flex-wrap: wrap;
   margin: 0;
-  font: 1em/1.3 Georgia, serif;
-  color: #fff;
-  background: #c00;
+  padding: 0;
+  color: var(--foreground-color);
   background: var(--primary-color);
+  font: var(--basesize)/var(--basefactor) Georgia, serif;
 }
 
-table {
-  margin: 0;
-  border-collapse: collapse;
+body > nav {
+  width: 100%;
+  padding: calc(var(--baseline) / 2) 0;
 }
 
-table small {
-  color: #faa;
+body > nav:first-child {
+  grid-area: header;
   color: var(--secondary-color);
   background: transparent;
-  font-size: 1em;
-}
-
-figcaption {
-  margin: 0 0 0 0.1em;
-  color: #faa;
-  color: var(--secondary-color);
   text-align: center;
-  line-height: 2;
-  font-size: 0.47em;
 }
 
-figcaption span {
-  color: #fff;
+body > nav:last-child {
+  grid-area: footer;
 }
 
-td:first-child {
-  text-align: right;
+main {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
 }
 
-td {
-  padding: 0 0.15em;
-  vertical-align: baseline;
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
 }
+
+figure img {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  background: var(--backdrop-color);
+  box-shadow: 0 0 1rem var(--backdrop-color);
+}
+
+/* >>> navigation */
+
+body > nav > ul {
+  max-width: var(--intrinsic-width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+body > nav > ul > li {
+  margin: 0 1px;
+  padding: 0 calc(var(--baseline) / 2);
+}
+
+/* <<< navigation */
 
 a[href] {
   display: inline-block;
-  padding: 0em 1.6em;
-  border-radius: 1em;
-  color: #f60;
-  background: #fcc;
+  transition: 150ms all ease;
+  color: var(--foreground-color);
+  background: transparent;
   text-decoration: none;
-  font-size: 0.5em;
 }
 
 a[href]:hover,
 a[href]:focus {
-  background: #fff;
+  text-shadow: 0 0 var(--baseline) var(--backdrop-color);
 }
 
-@media only screen and (max-width: 39.999em) {
-  figure {
-    font-size: 14vw;
+a[href]:hover {
+  transform: scale(1.3);
+  background-color: var(--primary-color);
+  box-shadow: 0 0 2rem var(--primary-color);
+}
+
+a[href]:focus,
+input:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 0.5rem;
+}
+
+a[href="#main"] {
+  color: var(--secondary-color);
+}
+
+a[href="#main"]:hover {
+  transform: none;
+}
+
+a[href="#main"]:focus {
+  outline-width: 1px;
+}
+
+@media only screen and (min-width: 600px) {
+  html,
+  body,
+  main {
+    height: 100%;
   }
 }
 
-@media only screen and (min-width: 40em) {
-  figure {
-    font-size: 4vw;
+@media only screen and (min-width: calc(800px + 7.2rem)) and (min-height: calc(800px + 7.2rem)) {
+  main {
+    justify-content: center;
+  }
+
+  body > nav > ul {
+    justify-content: space-between;
+  }
+
+  body > nav > ul > li:first-child {
+    padding-left: 0;
+  }
+
+  body > nav > ul > li:last-child {
+    padding-right: 0;
   }
 }
 
-@media only screen and (min-width: 40em) and (min-height: 30em) {
-  figure {
-    font-size: 6vw;
+@media only screen and (prefers-reduced-motion: no-preference) {
+  #main:target figure,
+  #main:target h1 {
+    animation: shake 1s;
+    transform: translate(0, 0);
+    transition: all ease-in-out;
   }
-}
 
-@media only screen and (min-width: 40em) and (min-height: 36em) {
-  figure {
-    font-size: 8vw;
+  @keyframes shake {
+    10%, 90% {
+      transform: translate(-1px, 0);
+    }
+
+    20%, 80% {
+      transform: translate(2px, 0);
+    }
+
+    30%, 50%, 70% {
+      transform: translate(-4px, 0);
+    }
+
+    40%, 60% {
+      transform: translate(4px, 0);
+    }
   }
 }
